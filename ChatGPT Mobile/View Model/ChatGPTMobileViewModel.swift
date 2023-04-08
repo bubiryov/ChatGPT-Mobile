@@ -14,6 +14,7 @@ final class ChatGPTMobileViewModel: ObservableObject {
     
     func send(text: String) async -> ChatResult? {
         let query = ChatQuery(model: .gpt3_5Turbo0301, messages: [.init(role: "user", content: text)])
+//        print(query.messages.first?.content)
         do {
             let result = try await client.chats(query: query)
             return result

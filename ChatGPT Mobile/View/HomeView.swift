@@ -12,6 +12,7 @@ struct HomeView: View {
     @EnvironmentObject var vm: ChatGPTMobileViewModel
     @State private var text = ""
     @State var messages = [String]()
+    @State private var isLoading = false
     
     var body: some View {
         NavigationView {
@@ -31,16 +32,25 @@ struct HomeView: View {
                         .background(Color.secondary)
                         .cornerRadius(20)
                     Button {
-                        Task {
-                            await start()
+                        if !isLoading {
+                            Task {
+                                await start(text)
+                            }
                         }
                     } label: {
-                        Image(systemName: "paperplane")
-                            .resizable()
-                            .scaledToFit()
-                            .frame(width: 30)
-                            .foregroundColor(.secondary)
-                    
+                        if !isLoading {
+                            Image(systemName: "paperplane")
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: 30)
+                                .foregroundColor(.secondary)
+                        } else {
+                            ProgressView()
+                                .progressViewStyle(CircularProgressViewStyle())
+                                .scaledToFit()
+                                .frame(width: 30)
+                        }
+                        
                     }
                 }
                 .frame(height: 50)
@@ -52,18 +62,20 @@ struct HomeView: View {
         }
     }
     
-    func start() async {
+    func start(_ text: String) async {
+        guard !text.isEmpty else { return }
         messages.append("Me: \n\(text)")
+        isLoading = true
         Task {
             if let result = await vm.send(text: text) {
                 await MainActor.run {
                     messages.append("ChatGPT: \n\(result.choices.last?.message.content ?? "Error")")
+                    isLoading = false
                 }
             }
         }
-        text = ""
+        self.text = ""
     }
-    
 }
 
 struct HomeView_Previews: PreviewProvider {
