@@ -11,6 +11,9 @@
 		8925F79A29E19F0A00411E1C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8925F79929E19F0A00411E1C /* ContentView.swift */; };
 		8925F79C29E19F0C00411E1C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8925F79B29E19F0C00411E1C /* Assets.xcassets */; };
 		8925F7A029E19F0C00411E1C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8925F79F29E19F0C00411E1C /* Preview Assets.xcassets */; };
+		8925F7A829E1A33600411E1C /* OpenAI in Frameworks */ = {isa = PBXBuildFile; productRef = 8925F7A729E1A33600411E1C /* OpenAI */; };
+		8925F7AB29E1A3A700411E1C /* ChatGPTMobileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8925F7AA29E1A3A700411E1C /* ChatGPTMobileViewModel.swift */; };
+		8925F7AE29E1A93300411E1C /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8925F7AD29E1A93300411E1C /* HomeView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +23,8 @@
 		8925F79B29E19F0C00411E1C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8925F79D29E19F0C00411E1C /* ChatGPT_Mobile.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ChatGPT_Mobile.entitlements; sourceTree = "<group>"; };
 		8925F79F29E19F0C00411E1C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		8925F7AA29E1A3A700411E1C /* ChatGPTMobileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatGPTMobileViewModel.swift; sourceTree = "<group>"; };
+		8925F7AD29E1A93300411E1C /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -27,6 +32,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8925F7A829E1A33600411E1C /* OpenAI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -52,6 +58,8 @@
 		8925F79629E19F0A00411E1C /* ChatGPT Mobile */ = {
 			isa = PBXGroup;
 			children = (
+				8925F7AC29E1A91A00411E1C /* View */,
+				8925F7A929E1A38400411E1C /* View Model */,
 				8925F79729E19F0A00411E1C /* ChatGPT_MobileApp.swift */,
 				8925F79929E19F0A00411E1C /* ContentView.swift */,
 				8925F79B29E19F0C00411E1C /* Assets.xcassets */,
@@ -67,6 +75,22 @@
 				8925F79F29E19F0C00411E1C /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		8925F7A929E1A38400411E1C /* View Model */ = {
+			isa = PBXGroup;
+			children = (
+				8925F7AA29E1A3A700411E1C /* ChatGPTMobileViewModel.swift */,
+			);
+			path = "View Model";
+			sourceTree = "<group>";
+		};
+		8925F7AC29E1A91A00411E1C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8925F7AD29E1A93300411E1C /* HomeView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -85,6 +109,9 @@
 			dependencies = (
 			);
 			name = "ChatGPT Mobile";
+			packageProductDependencies = (
+				8925F7A729E1A33600411E1C /* OpenAI */,
+			);
 			productName = "ChatGPT Mobile";
 			productReference = 8925F79429E19F0A00411E1C /* ChatGPT Mobile.app */;
 			productType = "com.apple.product-type.application";
@@ -113,6 +140,9 @@
 				Base,
 			);
 			mainGroup = 8925F78B29E19F0A00411E1C;
+			packageReferences = (
+				8925F7A629E1A33600411E1C /* XCRemoteSwiftPackageReference "OpenAI" */,
+			);
 			productRefGroup = 8925F79529E19F0A00411E1C /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -139,6 +169,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8925F7AB29E1A3A700411E1C /* ChatGPTMobileViewModel.swift in Sources */,
+				8925F7AE29E1A93300411E1C /* HomeView.swift in Sources */,
 				8925F79A29E19F0A00411E1C /* ContentView.swift in Sources */,
 				8925F79829E19F0A00411E1C /* ChatGPT_MobileApp.swift in Sources */,
 			);
@@ -354,6 +386,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		8925F7A629E1A33600411E1C /* XCRemoteSwiftPackageReference "OpenAI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/MacPaw/OpenAI";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.0.9;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		8925F7A729E1A33600411E1C /* OpenAI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8925F7A629E1A33600411E1C /* XCRemoteSwiftPackageReference "OpenAI" */;
+			productName = OpenAI;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 8925F78C29E19F0A00411E1C /* Project object */;
 }
