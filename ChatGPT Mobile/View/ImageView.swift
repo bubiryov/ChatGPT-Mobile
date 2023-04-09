@@ -28,8 +28,9 @@ struct ImageView: View {
                 
                 Spacer()
                 RequestField(text: $description, isLoading: vm.imageIsLoading, start: { _ in
-                    await vm.getImage(prompt: description)
+                    let temporaryDescription = description
                     description = ""
+                    await vm.getImage(prompt: temporaryDescription)
                 })
             }
             .navigationTitle("Images")

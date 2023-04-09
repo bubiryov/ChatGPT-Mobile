@@ -12,19 +12,33 @@ import OpenAI
 final class ChatGPTMobileViewModel: ObservableObject {
         
     var client = OpenAI(apiToken: "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")
+    var loader = Downloader()
+
     @Published var chatIsLoading = false
     @Published var imageIsLoading = false
     @Published var image: UIImage? = nil
-    var loader = Downloader()
+    @Published var allMessages: [Any] = []
     
-    func send(text: String) async -> ChatResult? {
+    func send(text: String) async {
+        guard !text.isEmpty else { return }
         let query = ChatQuery(model: .gpt3_5Turbo0301, messages: [.init(role: "user", content: text)])
+        await MainActor.run {
+            chatIsLoading = true
+            withAnimation {
+                allMessages.append(query)
+            }
+        }
         do {
             let result = try await client.chats(query: query)
-            return result
+            await MainActor.run {
+                chatIsLoading = false
+                withAnimation {
+                    allMessages.append(result)
+                }
+            }
         } catch (let error) {
             print(error.localizedDescription)
-            return nil
+            return
         }
     }
     

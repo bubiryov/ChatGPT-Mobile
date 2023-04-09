@@ -16,35 +16,39 @@ struct ChatView: View {
     var body: some View {
         NavigationView {
             VStack {
-                List {
-                    ForEach(messages, id: \.self) { message in
-                        Text(message)
+                ScrollView {
+                    ForEach(vm.allMessages.indices, id: \.self) { index in
+                        MessageView(message: vm.allMessages[index])
                     }
                     .listRowSeparator(.hidden)
                 }
-                .listStyle(.inset)
+                .padding(.horizontal)
                 
-                RequestField(text: $text, isLoading: vm.chatIsLoading, start: { _ in await start(text) })
+                RequestField(text: $text, isLoading: vm.chatIsLoading, start: { _ in
+                    let temporaryText = text
+                    text = ""
+                    await vm.send(text: temporaryText)
+                })
 
             }
             .navigationTitle("ChatGPT")
         }
     }
     
-    func start(_ text: String) async {
-        guard !text.isEmpty else { return }
-        messages.append("Me: \n\(text)")
-        vm.chatIsLoading = true
-        Task {
-            if let result = await vm.send(text: text) {
-                await MainActor.run {
-                    messages.append("ChatGPT: \n\(result.choices.last?.message.content ?? "Error")")
-                    vm.chatIsLoading = false
-                }
-            }
-        }
-        self.text = ""
-    }
+//    func start(_ text: String) async {
+//        guard !text.isEmpty else { return }
+//        messages.append("Me: \n\(text)")
+//        vm.chatIsLoading = true
+//        Task {
+//            if let result = await vm.send(text: text) {
+//                await MainActor.run {
+//                    messages.append("ChatGPT: \n\(result.choices.last?.message.content ?? "Error")")
+//                    vm.chatIsLoading = false
+//                }
+//            }
+//        }
+//        self.text = ""
+//    }
 }
 
 struct HomeView_Previews: PreviewProvider {
