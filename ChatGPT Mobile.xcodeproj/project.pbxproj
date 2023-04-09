@@ -15,6 +15,8 @@
 		8925F7AB29E1A3A700411E1C /* ChatGPTMobileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8925F7AA29E1A3A700411E1C /* ChatGPTMobileViewModel.swift */; };
 		8925F7AE29E1A93300411E1C /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8925F7AD29E1A93300411E1C /* ChatView.swift */; };
 		8925F7B029E1E60F00411E1C /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8925F7AF29E1E60F00411E1C /* ImageView.swift */; };
+		896C307A29E2F09B009EDCAB /* RequestField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 896C307929E2F09B009EDCAB /* RequestField.swift */; };
+		896C307C29E2F36F009EDCAB /* Downloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 896C307B29E2F36F009EDCAB /* Downloader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +29,8 @@
 		8925F7AA29E1A3A700411E1C /* ChatGPTMobileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatGPTMobileViewModel.swift; sourceTree = "<group>"; };
 		8925F7AD29E1A93300411E1C /* ChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
 		8925F7AF29E1E60F00411E1C /* ImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageView.swift; sourceTree = "<group>"; };
+		896C307929E2F09B009EDCAB /* RequestField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestField.swift; sourceTree = "<group>"; };
+		896C307B29E2F36F009EDCAB /* Downloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Downloader.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +87,7 @@
 			isa = PBXGroup;
 			children = (
 				8925F7AA29E1A3A700411E1C /* ChatGPTMobileViewModel.swift */,
+				896C307B29E2F36F009EDCAB /* Downloader.swift */,
 			);
 			path = "View Model";
 			sourceTree = "<group>";
@@ -90,10 +95,19 @@
 		8925F7AC29E1A91A00411E1C /* View */ = {
 			isa = PBXGroup;
 			children = (
+				896C307829E2F075009EDCAB /* Components */,
 				8925F7AD29E1A93300411E1C /* ChatView.swift */,
 				8925F7AF29E1E60F00411E1C /* ImageView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		896C307829E2F075009EDCAB /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				896C307929E2F09B009EDCAB /* RequestField.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -173,10 +187,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				8925F7B029E1E60F00411E1C /* ImageView.swift in Sources */,
+				896C307C29E2F36F009EDCAB /* Downloader.swift in Sources */,
 				8925F7AB29E1A3A700411E1C /* ChatGPTMobileViewModel.swift in Sources */,
 				8925F7AE29E1A93300411E1C /* ChatView.swift in Sources */,
 				8925F79A29E19F0A00411E1C /* ContentView.swift in Sources */,
 				8925F79829E19F0A00411E1C /* ChatGPT_MobileApp.swift in Sources */,
+				896C307A29E2F09B009EDCAB /* RequestField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

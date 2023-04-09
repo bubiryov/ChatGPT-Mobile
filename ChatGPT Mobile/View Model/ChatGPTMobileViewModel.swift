@@ -15,7 +15,7 @@ final class ChatGPTMobileViewModel: ObservableObject {
     @Published var chatIsLoading = false
     @Published var imageIsLoading = false
     @Published var image: UIImage? = nil
-    var loader = DownloadImageAsyncImageLoader()
+    var loader = Downloader()
     
     func send(text: String) async -> ChatResult? {
         let query = ChatQuery(model: .gpt3_5Turbo0301, messages: [.init(role: "user", content: text)])
@@ -46,30 +46,6 @@ final class ChatGPTMobileViewModel: ObservableObject {
             }
         } catch {
             print(error)
-        }
-    }
-}
-
-class DownloadImageAsyncImageLoader {
-        
-    func handleResponse(data: Data?, response: URLResponse?) -> UIImage? {
-        guard
-            let data = data,
-            let image = UIImage(data: data),
-            let response = response as? HTTPURLResponse,
-            response.statusCode >= 200 && response.statusCode < 300 else {
-            return nil
-        }
-        return image
-    }
-    
-    func downloadImage(url: URL) async throws -> UIImage? {
-        do {
-            let (data, response) = try await URLSession.shared.data(from: url)
-            let image = handleResponse(data: data, response: response)
-            return image
-        } catch {
-            throw error
         }
     }
 }
