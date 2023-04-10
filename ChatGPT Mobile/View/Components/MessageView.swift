@@ -17,11 +17,12 @@ struct MessageView: View {
             let text = message.messages.last?.content ?? "Возникла какая-то ошибка"
             VStack {
                 Text(text)
-                    .padding(10)
+                    .padding(.vertical, 8)
+                    .padding(.horizontal, 15)
                     .foregroundColor(.white)
-                    .font(.title3)
+                    .font(.system(size: 18))
                     .background(Color.blue)
-                    .cornerRadius(20)
+                    .cornerRadius(30)
                     .frame(maxWidth: 280, alignment: .trailing)
             }
             .frame(maxWidth: .infinity, alignment: .trailing)
@@ -30,9 +31,10 @@ struct MessageView: View {
             let text = response.choices[0].message.content
             VStack {
                 Text(text)
-                    .padding(10)
+                    .padding(.vertical, 8)
+                    .padding(.horizontal, 10)
                     .foregroundColor(.primary)
-                    .font(.title3)
+                    .font(.system(size: 18))
                     .background(Color.gray.opacity(0.5))
                     .cornerRadius(20)
                     .frame(maxWidth: 280, alignment: .leading)
@@ -44,6 +46,6 @@ struct MessageView: View {
 
 struct MessageView_Previews: PreviewProvider {
     static var previews: some View {
-        MessageView(message: ChatQuery(model: .gpt3_5Turbo0301, messages: [.init(role: "user", content: "Привет")]))
+        MessageView(message: ChatQuery(model: .gpt3_5Turbo0301, messages: [.init(role: "user", content: "Какой расход топлива у самой новой Bentley Continental GT?")]))
     }
 }

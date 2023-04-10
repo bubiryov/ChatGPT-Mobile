@@ -17,7 +17,7 @@ struct RequestField: View {
     var body: some View {
         HStack {
             TextField("Write here", text: $text)
-                .padding(.leading)
+                .padding(.horizontal)
                 .frame(maxHeight: .infinity)
                 .background(Color.secondary.opacity(0.5))
                 .cornerRadius(20)
@@ -33,7 +33,6 @@ struct RequestField: View {
                     Image(systemName: "paperplane")
                         .resizable()
                         .scaledToFit()
-                        .bold()
                         .frame(width: 30)
                         .foregroundColor(.secondary)
                 } else {

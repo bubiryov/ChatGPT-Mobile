@@ -22,6 +22,7 @@ final class ChatGPTMobileViewModel: ObservableObject {
     
     func send(text: String) async {
         guard !text.isEmpty else { return }
+        await UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
         let chat = Chat(role: "user", content: text)
         await MainActor.run {
             chats.append(chat)
@@ -45,12 +46,16 @@ final class ChatGPTMobileViewModel: ObservableObject {
             }
         } catch (let error) {
             print(error.localizedDescription)
+            await MainActor.run {
+                chatIsLoading = false
+            }
             return
         }
     }
     
     func getImage(prompt: String) async {
         guard !prompt.isEmpty else { return }
+        await UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
         await MainActor.run {
             imageIsLoading = true
         }
@@ -67,6 +72,8 @@ final class ChatGPTMobileViewModel: ObservableObject {
             }
         } catch {
             print(error)
+            imageIsLoading = false
+            return
         }
     }
 }

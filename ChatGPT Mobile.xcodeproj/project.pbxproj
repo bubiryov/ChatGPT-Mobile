@@ -15,6 +15,7 @@
 		8925F7AB29E1A3A700411E1C /* ChatGPTMobileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8925F7AA29E1A3A700411E1C /* ChatGPTMobileViewModel.swift */; };
 		8925F7AE29E1A93300411E1C /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8925F7AD29E1A93300411E1C /* ChatView.swift */; };
 		8925F7B029E1E60F00411E1C /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8925F7AF29E1E60F00411E1C /* ImageView.swift */; };
+		8939B49129E4AA5300AC5D86 /* ImageSaver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8939B49029E4AA5300AC5D86 /* ImageSaver.swift */; };
 		896C307A29E2F09B009EDCAB /* RequestField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 896C307929E2F09B009EDCAB /* RequestField.swift */; };
 		896C307C29E2F36F009EDCAB /* Downloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 896C307B29E2F36F009EDCAB /* Downloader.swift */; };
 		896C307E29E31483009EDCAB /* MessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 896C307D29E31483009EDCAB /* MessageView.swift */; };
@@ -30,6 +31,8 @@
 		8925F7AA29E1A3A700411E1C /* ChatGPTMobileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatGPTMobileViewModel.swift; sourceTree = "<group>"; };
 		8925F7AD29E1A93300411E1C /* ChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
 		8925F7AF29E1E60F00411E1C /* ImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageView.swift; sourceTree = "<group>"; };
+		8939B48F29E4A9EE00AC5D86 /* ChatGPT-Mobile-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "ChatGPT-Mobile-Info.plist"; sourceTree = SOURCE_ROOT; };
+		8939B49029E4AA5300AC5D86 /* ImageSaver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSaver.swift; sourceTree = "<group>"; };
 		896C307929E2F09B009EDCAB /* RequestField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestField.swift; sourceTree = "<group>"; };
 		896C307B29E2F36F009EDCAB /* Downloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Downloader.swift; sourceTree = "<group>"; };
 		896C307D29E31483009EDCAB /* MessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageView.swift; sourceTree = "<group>"; };
@@ -66,6 +69,7 @@
 		8925F79629E19F0A00411E1C /* ChatGPT Mobile */ = {
 			isa = PBXGroup;
 			children = (
+				8939B48F29E4A9EE00AC5D86 /* ChatGPT-Mobile-Info.plist */,
 				8925F7AC29E1A91A00411E1C /* View */,
 				8925F7A929E1A38400411E1C /* View Model */,
 				8925F79729E19F0A00411E1C /* ChatGPT_MobileApp.swift */,
@@ -90,6 +94,7 @@
 			children = (
 				8925F7AA29E1A3A700411E1C /* ChatGPTMobileViewModel.swift */,
 				896C307B29E2F36F009EDCAB /* Downloader.swift */,
+				8939B49029E4AA5300AC5D86 /* ImageSaver.swift */,
 			);
 			path = "View Model";
 			sourceTree = "<group>";
@@ -193,6 +198,7 @@
 				896C307C29E2F36F009EDCAB /* Downloader.swift in Sources */,
 				8925F7AB29E1A3A700411E1C /* ChatGPTMobileViewModel.swift in Sources */,
 				8925F7AE29E1A93300411E1C /* ChatView.swift in Sources */,
+				8939B49129E4AA5300AC5D86 /* ImageSaver.swift in Sources */,
 				896C307E29E31483009EDCAB /* MessageView.swift in Sources */,
 				8925F79A29E19F0A00411E1C /* ContentView.swift in Sources */,
 				8925F79829E19F0A00411E1C /* ChatGPT_MobileApp.swift in Sources */,
@@ -325,6 +331,8 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "ChatGPT-Mobile-Info.plist";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "wants to get acces to your photo library";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -363,6 +371,8 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "ChatGPT-Mobile-Info.plist";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "wants to get acces to your photo library";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;

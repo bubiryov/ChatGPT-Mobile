@@ -24,6 +24,18 @@ struct ImageView: View {
                         .scaledToFit()
                         .cornerRadius(20)
                         .padding()
+                        .contextMenu {
+                            Button {
+                                let saver = ImageSaver()
+                                saver.writeToPhotoAlbum(image: image)
+                            } label: {
+                                HStack {
+                                    Text("Save")
+                                    Image(systemName: "square.and.arrow.down")
+                                }
+                            }
+
+                        }
                 }
                 
                 Spacer()
