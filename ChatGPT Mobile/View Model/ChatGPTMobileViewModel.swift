@@ -35,9 +35,11 @@ final class ChatGPTMobileViewModel: ObservableObject {
         }
         do {
             let result = try await client.chats(query: query)
+            let chatResult = Chat(role: "assistant", content: result.choices[0].message.content)
             await MainActor.run {
                 withAnimation {
                     allMessages.append(result)
+                    chats.append(chatResult)
                 }
                 chatIsLoading = false
             }

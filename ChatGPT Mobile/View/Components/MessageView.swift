@@ -44,6 +44,6 @@ struct MessageView: View {
 
 struct MessageView_Previews: PreviewProvider {
     static var previews: some View {
-        MessageView(message: ChatQuery(model: .gpt3_5Turbo0301, messages: [.init(role: "user", content: "Вы можете добавить модификатор `fixedSize(horizontal: true, vertical: false)` и установить максимальную ширину текста, используя модификатор `.frame(width: 280)`.")]))
+        MessageView(message: ChatQuery(model: .gpt3_5Turbo0301, messages: [.init(role: "user", content: "Привет")]))
     }
 }
