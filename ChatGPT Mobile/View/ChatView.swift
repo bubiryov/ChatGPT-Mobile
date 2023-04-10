@@ -21,11 +21,6 @@ struct ChatView: View {
                         ForEach(vm.allMessages.indices, id: \.self) { index in
                             MessageView(message: vm.allMessages[index])
                                 .id(index)
-//                                .onChange(of: vm.chatIsLoading) { _ in
-//                                    withAnimation {
-//                                        scrollView.scrollTo(vm.allMessages.indices.last)
-//                                    }
-//                                }
                         }
                         .listRowSeparator(.hidden)
                         
@@ -36,9 +31,7 @@ struct ChatView: View {
                     .scrollIndicators(.hidden)
                     .onChange(of: vm.chatIsLoading) { _ in
                         withAnimation {
-//                            scrollView.scrollTo(vm.allMessages.indices.last)
                             scrollView.scrollTo("end", anchor: .bottom)
-
                         }
                     }
                 }

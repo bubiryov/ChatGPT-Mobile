@@ -14,7 +14,7 @@ struct MessageView: View {
     
     var body: some View {
         if let message = self.message as? ChatQuery {
-            let text = message.messages[0].content
+            let text = message.messages.last?.content ?? "Возникла какая-то ошибка"
             VStack {
                 Text(text)
                     .padding(10)

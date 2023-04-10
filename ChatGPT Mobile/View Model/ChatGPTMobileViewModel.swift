@@ -18,10 +18,15 @@ final class ChatGPTMobileViewModel: ObservableObject {
     @Published var imageIsLoading = false
     @Published var image: UIImage? = nil
     @Published var allMessages: [Any] = []
+    @Published var chats: [Chat] = []
     
     func send(text: String) async {
         guard !text.isEmpty else { return }
-        let query = ChatQuery(model: .gpt3_5Turbo0301, messages: [.init(role: "user", content: text)])
+        let chat = Chat(role: "user", content: text)
+        await MainActor.run {
+            chats.append(chat)
+        }
+        let query = ChatQuery(model: .gpt3_5Turbo0301, messages: .init(chats))
         await MainActor.run {
             withAnimation {
                 allMessages.append(query)
