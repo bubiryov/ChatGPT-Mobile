@@ -34,7 +34,7 @@ struct RequestField: View {
                         .resizable()
                         .scaledToFit()
                         .bold()
-                        .frame(width: 25)
+                        .frame(width: 30)
                         .foregroundColor(.secondary)
                 } else {
                     ProgressView()

@@ -16,13 +16,32 @@ struct ChatView: View {
     var body: some View {
         NavigationView {
             VStack {
-                ScrollView {
-                    ForEach(vm.allMessages.indices, id: \.self) { index in
-                        MessageView(message: vm.allMessages[index])
+                ScrollViewReader { scrollView in
+                    ScrollView {
+                        ForEach(vm.allMessages.indices, id: \.self) { index in
+                            MessageView(message: vm.allMessages[index])
+                                .id(index)
+//                                .onChange(of: vm.chatIsLoading) { _ in
+//                                    withAnimation {
+//                                        scrollView.scrollTo(vm.allMessages.indices.last)
+//                                    }
+//                                }
+                        }
+                        .listRowSeparator(.hidden)
+                        
+                        Color.clear.frame(height: 5).id("end")
+                        
                     }
-                    .listRowSeparator(.hidden)
+                    .padding(.horizontal)
+                    .scrollIndicators(.hidden)
+                    .onChange(of: vm.chatIsLoading) { _ in
+                        withAnimation {
+//                            scrollView.scrollTo(vm.allMessages.indices.last)
+                            scrollView.scrollTo("end", anchor: .bottom)
+
+                        }
+                    }
                 }
-                .padding(.horizontal)
                 
                 RequestField(text: $text, isLoading: vm.chatIsLoading, start: { _ in
                     let temporaryText = text

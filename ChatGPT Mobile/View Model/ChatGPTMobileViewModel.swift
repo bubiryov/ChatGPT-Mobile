@@ -23,18 +23,18 @@ final class ChatGPTMobileViewModel: ObservableObject {
         guard !text.isEmpty else { return }
         let query = ChatQuery(model: .gpt3_5Turbo0301, messages: [.init(role: "user", content: text)])
         await MainActor.run {
-            chatIsLoading = true
             withAnimation {
                 allMessages.append(query)
             }
+            chatIsLoading = true
         }
         do {
             let result = try await client.chats(query: query)
             await MainActor.run {
-                chatIsLoading = false
                 withAnimation {
                     allMessages.append(result)
                 }
+                chatIsLoading = false
             }
         } catch (let error) {
             print(error.localizedDescription)

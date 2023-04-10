@@ -21,7 +21,7 @@ struct MessageView: View {
                     .foregroundColor(.white)
                     .font(.title3)
                     .background(Color.blue)
-                    .cornerRadius(15)
+                    .cornerRadius(20)
                     .frame(maxWidth: 280, alignment: .trailing)
             }
             .frame(maxWidth: .infinity, alignment: .trailing)
@@ -31,10 +31,10 @@ struct MessageView: View {
             VStack {
                 Text(text)
                     .padding(10)
-                    .foregroundColor(.black)
+                    .foregroundColor(.primary)
                     .font(.title3)
                     .background(Color.gray.opacity(0.5))
-                    .cornerRadius(15)
+                    .cornerRadius(20)
                     .frame(maxWidth: 280, alignment: .leading)
             }
             .frame(maxWidth: .infinity, alignment: .leading)
