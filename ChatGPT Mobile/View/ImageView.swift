@@ -18,24 +18,29 @@ struct ImageView: View {
                 
                 Spacer()
                 
-                if let image = vm.image {
-                    Image(uiImage: image)
-                        .resizable()
-                        .scaledToFit()
-                        .cornerRadius(20)
-                        .padding()
-                        .contextMenu {
-                            Button {
-                                let saver = ImageSaver()
-                                saver.writeToPhotoAlbum(image: image)
-                            } label: {
-                                HStack {
-                                    Text("Save")
-                                    Image(systemName: "square.and.arrow.down")
+                if !vm.imageIsLoading {
+                    if let image = vm.image {
+                        Image(uiImage: image)
+                            .resizable()
+                            .scaledToFit()
+                            .cornerRadius(20)
+                            .padding()
+                            .contextMenu {
+                                Button {
+                                    let saver = ImageSaver()
+                                    saver.writeToPhotoAlbum(image: image)
+                                } label: {
+                                    HStack {
+                                        Text("Save")
+                                        Image(systemName: "square.and.arrow.down")
+                                    }
                                 }
                             }
-
-                        }
+                        
+                    }
+                } else {
+                    LottieView()
+                        .frame(width: 200, height: 200)
                 }
                 
                 Spacer()

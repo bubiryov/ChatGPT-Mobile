@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		098FB662B9682B2749B730B9 /* Pods_ChatGPT_Mobile.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 61B540CB1766B20C201D8D49 /* Pods_ChatGPT_Mobile.framework */; };
 		8925F79829E19F0A00411E1C /* ChatGPT_MobileApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8925F79729E19F0A00411E1C /* ChatGPT_MobileApp.swift */; };
 		8925F79A29E19F0A00411E1C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8925F79929E19F0A00411E1C /* ContentView.swift */; };
 		8925F79C29E19F0C00411E1C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8925F79B29E19F0C00411E1C /* Assets.xcassets */; };
@@ -19,9 +20,15 @@
 		896C307A29E2F09B009EDCAB /* RequestField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 896C307929E2F09B009EDCAB /* RequestField.swift */; };
 		896C307C29E2F36F009EDCAB /* Downloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 896C307B29E2F36F009EDCAB /* Downloader.swift */; };
 		896C307E29E31483009EDCAB /* MessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 896C307D29E31483009EDCAB /* MessageView.swift */; };
+		89B169FE29E804270004D00E /* loading.json in Resources */ = {isa = PBXBuildFile; fileRef = 89B169FD29E804270004D00E /* loading.json */; };
+		89B16A0029E804530004D00E /* LottieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B169FF29E804530004D00E /* LottieView.swift */; };
+		89B16A0229E814540004D00E /* 99109-loading.json in Resources */ = {isa = PBXBuildFile; fileRef = 89B16A0129E814540004D00E /* 99109-loading.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		03C3F243DF54AE520F147B61 /* Pods-ChatGPT Mobile.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChatGPT Mobile.release.xcconfig"; path = "Target Support Files/Pods-ChatGPT Mobile/Pods-ChatGPT Mobile.release.xcconfig"; sourceTree = "<group>"; };
+		61B540CB1766B20C201D8D49 /* Pods_ChatGPT_Mobile.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ChatGPT_Mobile.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		645DAA942BF592F7196181ED /* Pods-ChatGPT Mobile.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChatGPT Mobile.debug.xcconfig"; path = "Target Support Files/Pods-ChatGPT Mobile/Pods-ChatGPT Mobile.debug.xcconfig"; sourceTree = "<group>"; };
 		8925F79429E19F0A00411E1C /* ChatGPT Mobile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ChatGPT Mobile.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8925F79729E19F0A00411E1C /* ChatGPT_MobileApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatGPT_MobileApp.swift; sourceTree = "<group>"; };
 		8925F79929E19F0A00411E1C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -36,6 +43,9 @@
 		896C307929E2F09B009EDCAB /* RequestField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestField.swift; sourceTree = "<group>"; };
 		896C307B29E2F36F009EDCAB /* Downloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Downloader.swift; sourceTree = "<group>"; };
 		896C307D29E31483009EDCAB /* MessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageView.swift; sourceTree = "<group>"; };
+		89B169FD29E804270004D00E /* loading.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loading.json; sourceTree = "<group>"; };
+		89B169FF29E804530004D00E /* LottieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieView.swift; sourceTree = "<group>"; };
+		89B16A0129E814540004D00E /* 99109-loading.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "99109-loading.json"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,17 +54,28 @@
 			buildActionMask = 2147483647;
 			files = (
 				8925F7A829E1A33600411E1C /* OpenAI in Frameworks */,
+				098FB662B9682B2749B730B9 /* Pods_ChatGPT_Mobile.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3DF7A2C0B9D0A29E7CA7BC33 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				61B540CB1766B20C201D8D49 /* Pods_ChatGPT_Mobile.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		8925F78B29E19F0A00411E1C = {
 			isa = PBXGroup;
 			children = (
 				8925F79629E19F0A00411E1C /* ChatGPT Mobile */,
 				8925F79529E19F0A00411E1C /* Products */,
+				C7935A2D9A0FF35BECB05560 /* Pods */,
+				3DF7A2C0B9D0A29E7CA7BC33 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -102,9 +123,11 @@
 		8925F7AC29E1A91A00411E1C /* View */ = {
 			isa = PBXGroup;
 			children = (
+				89B169FC29E804080004D00E /* Lottie */,
 				896C307829E2F075009EDCAB /* Components */,
 				8925F7AD29E1A93300411E1C /* ChatView.swift */,
 				8925F7AF29E1E60F00411E1C /* ImageView.swift */,
+				89B169FF29E804530004D00E /* LottieView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -118,6 +141,24 @@
 			path = Components;
 			sourceTree = "<group>";
 		};
+		89B169FC29E804080004D00E /* Lottie */ = {
+			isa = PBXGroup;
+			children = (
+				89B169FD29E804270004D00E /* loading.json */,
+				89B16A0129E814540004D00E /* 99109-loading.json */,
+			);
+			path = Lottie;
+			sourceTree = "<group>";
+		};
+		C7935A2D9A0FF35BECB05560 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				645DAA942BF592F7196181ED /* Pods-ChatGPT Mobile.debug.xcconfig */,
+				03C3F243DF54AE520F147B61 /* Pods-ChatGPT Mobile.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -125,9 +166,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8925F7A329E19F0C00411E1C /* Build configuration list for PBXNativeTarget "ChatGPT Mobile" */;
 			buildPhases = (
+				BE6E8D5488FE10D4902FF1C2 /* [CP] Check Pods Manifest.lock */,
 				8925F79029E19F0A00411E1C /* Sources */,
 				8925F79129E19F0A00411E1C /* Frameworks */,
 				8925F79229E19F0A00411E1C /* Resources */,
+				B3796F074D0779FC2A4799CD /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -183,11 +226,55 @@
 			buildActionMask = 2147483647;
 			files = (
 				8925F7A029E19F0C00411E1C /* Preview Assets.xcassets in Resources */,
+				89B16A0229E814540004D00E /* 99109-loading.json in Resources */,
 				8925F79C29E19F0C00411E1C /* Assets.xcassets in Resources */,
+				89B169FE29E804270004D00E /* loading.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		B3796F074D0779FC2A4799CD /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ChatGPT Mobile/Pods-ChatGPT Mobile-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ChatGPT Mobile/Pods-ChatGPT Mobile-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ChatGPT Mobile/Pods-ChatGPT Mobile-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BE6E8D5488FE10D4902FF1C2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ChatGPT Mobile-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		8925F79029E19F0A00411E1C /* Sources */ = {
@@ -201,6 +288,7 @@
 				8939B49129E4AA5300AC5D86 /* ImageSaver.swift in Sources */,
 				896C307E29E31483009EDCAB /* MessageView.swift in Sources */,
 				8925F79A29E19F0A00411E1C /* ContentView.swift in Sources */,
+				89B16A0029E804530004D00E /* LottieView.swift in Sources */,
 				8925F79829E19F0A00411E1C /* ChatGPT_MobileApp.swift in Sources */,
 				896C307A29E2F09B009EDCAB /* RequestField.swift in Sources */,
 			);
@@ -320,6 +408,7 @@
 		};
 		8925F7A429E19F0C00411E1C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 645DAA942BF592F7196181ED /* Pods-ChatGPT Mobile.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -360,6 +449,7 @@
 		};
 		8925F7A529E19F0C00411E1C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 03C3F243DF54AE520F147B61 /* Pods-ChatGPT Mobile.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
