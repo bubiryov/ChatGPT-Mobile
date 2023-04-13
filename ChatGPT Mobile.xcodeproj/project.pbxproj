@@ -23,7 +23,18 @@
 		89B169FE29E804270004D00E /* loading.json in Resources */ = {isa = PBXBuildFile; fileRef = 89B169FD29E804270004D00E /* loading.json */; };
 		89B16A0029E804530004D00E /* LottieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B169FF29E804530004D00E /* LottieView.swift */; };
 		89B16A0229E814540004D00E /* 99109-loading.json in Resources */ = {isa = PBXBuildFile; fileRef = 89B16A0129E814540004D00E /* 99109-loading.json */; };
+		89B16A0A29E893D50004D00E /* ChatGPT_Mobile_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B16A0929E893D50004D00E /* ChatGPT_Mobile_Tests.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		89B16A0B29E893D50004D00E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8925F78C29E19F0A00411E1C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8925F79329E19F0A00411E1C;
+			remoteInfo = "ChatGPT Mobile";
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		03C3F243DF54AE520F147B61 /* Pods-ChatGPT Mobile.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChatGPT Mobile.release.xcconfig"; path = "Target Support Files/Pods-ChatGPT Mobile/Pods-ChatGPT Mobile.release.xcconfig"; sourceTree = "<group>"; };
@@ -46,6 +57,8 @@
 		89B169FD29E804270004D00E /* loading.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loading.json; sourceTree = "<group>"; };
 		89B169FF29E804530004D00E /* LottieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieView.swift; sourceTree = "<group>"; };
 		89B16A0129E814540004D00E /* 99109-loading.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "99109-loading.json"; sourceTree = "<group>"; };
+		89B16A0729E893D50004D00E /* ChatGPT Mobile_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ChatGPT Mobile_Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		89B16A0929E893D50004D00E /* ChatGPT_Mobile_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatGPT_Mobile_Tests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +68,13 @@
 			files = (
 				8925F7A829E1A33600411E1C /* OpenAI in Frameworks */,
 				098FB662B9682B2749B730B9 /* Pods_ChatGPT_Mobile.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		89B16A0429E893D50004D00E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -73,6 +93,7 @@
 			isa = PBXGroup;
 			children = (
 				8925F79629E19F0A00411E1C /* ChatGPT Mobile */,
+				89B16A0829E893D50004D00E /* ChatGPT Mobile_Tests */,
 				8925F79529E19F0A00411E1C /* Products */,
 				C7935A2D9A0FF35BECB05560 /* Pods */,
 				3DF7A2C0B9D0A29E7CA7BC33 /* Frameworks */,
@@ -83,6 +104,7 @@
 			isa = PBXGroup;
 			children = (
 				8925F79429E19F0A00411E1C /* ChatGPT Mobile.app */,
+				89B16A0729E893D50004D00E /* ChatGPT Mobile_Tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -150,6 +172,14 @@
 			path = Lottie;
 			sourceTree = "<group>";
 		};
+		89B16A0829E893D50004D00E /* ChatGPT Mobile_Tests */ = {
+			isa = PBXGroup;
+			children = (
+				89B16A0929E893D50004D00E /* ChatGPT_Mobile_Tests.swift */,
+			);
+			path = "ChatGPT Mobile_Tests";
+			sourceTree = "<group>";
+		};
 		C7935A2D9A0FF35BECB05560 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -184,6 +214,24 @@
 			productReference = 8925F79429E19F0A00411E1C /* ChatGPT Mobile.app */;
 			productType = "com.apple.product-type.application";
 		};
+		89B16A0629E893D50004D00E /* ChatGPT Mobile_Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 89B16A0F29E893D50004D00E /* Build configuration list for PBXNativeTarget "ChatGPT Mobile_Tests" */;
+			buildPhases = (
+				89B16A0329E893D50004D00E /* Sources */,
+				89B16A0429E893D50004D00E /* Frameworks */,
+				89B16A0529E893D50004D00E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				89B16A0C29E893D50004D00E /* PBXTargetDependency */,
+			);
+			name = "ChatGPT Mobile_Tests";
+			productName = "ChatGPT Mobile_Tests";
+			productReference = 89B16A0729E893D50004D00E /* ChatGPT Mobile_Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -196,6 +244,10 @@
 				TargetAttributes = {
 					8925F79329E19F0A00411E1C = {
 						CreatedOnToolsVersion = 14.3;
+					};
+					89B16A0629E893D50004D00E = {
+						CreatedOnToolsVersion = 14.3;
+						TestTargetID = 8925F79329E19F0A00411E1C;
 					};
 				};
 			};
@@ -216,6 +268,7 @@
 			projectRoot = "";
 			targets = (
 				8925F79329E19F0A00411E1C /* ChatGPT Mobile */,
+				89B16A0629E893D50004D00E /* ChatGPT Mobile_Tests */,
 			);
 		};
 /* End PBXProject section */
@@ -229,6 +282,13 @@
 				89B16A0229E814540004D00E /* 99109-loading.json in Resources */,
 				8925F79C29E19F0C00411E1C /* Assets.xcassets in Resources */,
 				89B169FE29E804270004D00E /* loading.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		89B16A0529E893D50004D00E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -294,7 +354,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		89B16A0329E893D50004D00E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				89B16A0A29E893D50004D00E /* ChatGPT_Mobile_Tests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		89B16A0C29E893D50004D00E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8925F79329E19F0A00411E1C /* ChatGPT Mobile */;
+			targetProxy = 89B16A0B29E893D50004D00E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		8925F7A129E19F0C00411E1C /* Debug */ = {
@@ -488,6 +564,47 @@
 			};
 			name = Release;
 		};
+		89B16A0D29E893D50004D00E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = FSGMDDB4P8;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.icloud-bubiryov.ChatGPT-Mobile-Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ChatGPT Mobile.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/ChatGPT Mobile";
+			};
+			name = Debug;
+		};
+		89B16A0E29E893D50004D00E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = FSGMDDB4P8;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.icloud-bubiryov.ChatGPT-Mobile-Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ChatGPT Mobile.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/ChatGPT Mobile";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -505,6 +622,15 @@
 			buildConfigurations = (
 				8925F7A429E19F0C00411E1C /* Debug */,
 				8925F7A529E19F0C00411E1C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		89B16A0F29E893D50004D00E /* Build configuration list for PBXNativeTarget "ChatGPT Mobile_Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				89B16A0D29E893D50004D00E /* Debug */,
+				89B16A0E29E893D50004D00E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -12,7 +12,11 @@ import OpenAI
 final class ChatGPTMobileViewModel: ObservableObject {
         
     var client = OpenAI(apiToken: "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")
-    var loader = Downloader()
+    var loader: Downloader
+    
+    init(loader: Downloader) {
+        self.loader = loader
+    }
 
     @Published var chatIsLoading = false
     @Published var imageIsLoading = false
@@ -23,7 +27,7 @@ final class ChatGPTMobileViewModel: ObservableObject {
     func send(text: String) async {
         guard !text.isEmpty else { return }
         await UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
-        let chat = Chat(role: "user", content: text)
+        let chat = Chat(role: .user, content: text)
         await MainActor.run {
             chats.append(chat)
         }
@@ -36,7 +40,7 @@ final class ChatGPTMobileViewModel: ObservableObject {
         }
         do {
             let result = try await client.chats(query: query)
-            let chatResult = Chat(role: "assistant", content: result.choices[0].message.content)
+            let chatResult = Chat(role: .assistant, content: result.choices[0].message.content)
             await MainActor.run {
                 withAnimation {
                     allMessages.append(result)

@@ -66,6 +66,6 @@ struct ChatView: View {
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
         ChatView()
-            .environmentObject(ChatGPTMobileViewModel())
+            .environmentObject(ChatGPTMobileViewModel(loader: Downloader()))
     }
 }

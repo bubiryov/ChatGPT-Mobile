@@ -58,6 +58,6 @@ struct ImageView: View {
 struct ImageView_Previews: PreviewProvider {
     static var previews: some View {
         ImageView()
-            .environmentObject(ChatGPTMobileViewModel())
+            .environmentObject(ChatGPTMobileViewModel(loader: Downloader()))
     }
 }

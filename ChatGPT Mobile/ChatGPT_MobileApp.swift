@@ -10,7 +10,7 @@ import SwiftUI
 @main
 struct ChatGPT_MobileApp: App {
     
-    @StateObject var vm = ChatGPTMobileViewModel()
+    @StateObject var vm = ChatGPTMobileViewModel(loader: Downloader())
     
     var body: some Scene {
         WindowGroup {

@@ -53,8 +53,8 @@ struct RequestField: View {
 
 struct RequestField_Previews: PreviewProvider {
     static var previews: some View {
-        let vm = ChatGPTMobileViewModel()
+        let vm = ChatGPTMobileViewModel(loader: Downloader())
         RequestField(text: .constant(""), isLoading: false, start: { _ in await vm.getImage(prompt: "") })
-            .environmentObject(ChatGPTMobileViewModel())
+            .environmentObject(ChatGPTMobileViewModel(loader: Downloader()))
     }
 }
