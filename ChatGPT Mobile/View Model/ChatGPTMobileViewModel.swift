@@ -11,7 +11,7 @@ import OpenAI
 
 final class ChatGPTMobileViewModel: ObservableObject {
         
-    var client = OpenAI(apiToken: "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")
+    var client = OpenAI(apiToken: "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")
     var loader: Downloader
     
     init(loader: Downloader) {

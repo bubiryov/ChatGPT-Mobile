@@ -113,8 +113,8 @@
 			isa = PBXGroup;
 			children = (
 				8939B48F29E4A9EE00AC5D86 /* ChatGPT-Mobile-Info.plist */,
-				8925F7AC29E1A91A00411E1C /* View */,
 				8925F7A929E1A38400411E1C /* View Model */,
+				8925F7AC29E1A91A00411E1C /* View */,
 				8925F79729E19F0A00411E1C /* ChatGPT_MobileApp.swift */,
 				8925F79929E19F0A00411E1C /* ContentView.swift */,
 				8925F79B29E19F0C00411E1C /* Assets.xcassets */,

@@ -7,7 +7,7 @@
 
 import XCTest
 
-@testable import ChatGPT_Mobile // Замените "MyProject" на название вашего проекта
+@testable import ChatGPT_Mobile
 
 class ChatGPTMobileViewModelTests: XCTestCase {
     
@@ -46,8 +46,8 @@ class ChatGPTMobileViewModelTests: XCTestCase {
         await vm.send(text: "Hello!")
         
         // Then
-        XCTAssertEqual(vm.chats.count, initialChatsCount + 2) // User and assistant chats
-        XCTAssertEqual(vm.allMessages.count, initialAllMessagesCount + 2) // User and assistant chats
+        XCTAssertEqual(vm.chats.count, initialChatsCount + 2)
+        XCTAssertEqual(vm.allMessages.count, initialAllMessagesCount + 2)
         XCTAssertFalse(vm.chatIsLoading)
     }
     
@@ -79,7 +79,7 @@ class ChatGPTMobileViewModelTests: XCTestCase {
 
 class MockDownloader: Downloader {
     override func downloadImage(url: URL) async throws -> UIImage? {
-        return UIImage(systemName: "photo") // Заглушка, возвращающая фиктивное изображение
+        return UIImage(systemName: "photo")
     }
 }
 
