@@ -18,9 +18,10 @@ struct ChatView: View {
             VStack {
                 ScrollViewReader { scrollView in
                     ScrollView {
-                        ForEach(vm.allMessages.indices, id: \.self) { index in
-                            MessageView(message: vm.allMessages[index])
-                                .id(index)
+                        ForEach(vm.chats.indices, id: \.self) { index in
+//                            MessageView(message: vm.allMessages[index])
+//                                .id(index)
+                            MessageView(message: vm.chats[index])
                         }
                         .listRowSeparator(.hidden)
                         

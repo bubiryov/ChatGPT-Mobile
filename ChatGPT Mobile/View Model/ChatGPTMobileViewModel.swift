@@ -29,24 +29,20 @@ final class ChatGPTMobileViewModel: ObservableObject {
         await UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
         let chat = Chat(role: .user, content: text)
         await MainActor.run {
-            chats.append(chat)
+            withAnimation {
+                chats.append(chat)
+                chatIsLoading = true
+            }
         }
         let query = ChatQuery(model: .gpt3_5Turbo0301, messages: .init(chats))
-        await MainActor.run {
-            withAnimation {
-                allMessages.append(query)
-            }
-            chatIsLoading = true
-        }
         do {
             let result = try await client.chats(query: query)
             let chatResult = Chat(role: .assistant, content: result.choices[0].message.content)
             await MainActor.run {
                 withAnimation {
-                    allMessages.append(result)
+                    chatIsLoading = false
                     chats.append(chatResult)
                 }
-                chatIsLoading = false
             }
         } catch (let error) {
             print(error.localizedDescription)
@@ -61,7 +57,9 @@ final class ChatGPTMobileViewModel: ObservableObject {
         guard !prompt.isEmpty else { return }
         await UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
         await MainActor.run {
-            imageIsLoading = true
+            withAnimation {
+                imageIsLoading = true
+            }
         }
         let query = ImagesQuery(prompt: prompt, n: 1, size: "1024x1024")
         do {
@@ -69,14 +67,18 @@ final class ChatGPTMobileViewModel: ObservableObject {
             if let url = URL(string: result.data[0].url) {
                 if let image = try await loader.downloadImage(url: url) {
                     await MainActor.run {
-                        self.image = image
-                        imageIsLoading = false
+                        withAnimation {
+                            self.image = image
+                            imageIsLoading = false
+                        }
                     }
                 }
             }
         } catch {
             print(error)
-            imageIsLoading = false
+            await MainActor.run {
+                imageIsLoading = false
+            }
             return
         }
     }

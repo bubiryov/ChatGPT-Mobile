@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @EnvironmentObject var vm: ChatGPTMobileViewModel
+    
     var body: some View {
         TabView {
             ChatView()
@@ -26,5 +29,6 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
+            .environmentObject(ChatGPTMobileViewModel(loader: Downloader()))
     }
 }

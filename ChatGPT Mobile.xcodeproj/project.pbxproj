@@ -149,7 +149,6 @@
 				896C307829E2F075009EDCAB /* Components */,
 				8925F7AD29E1A93300411E1C /* ChatView.swift */,
 				8925F7AF29E1E60F00411E1C /* ImageView.swift */,
-				89B169FF29E804530004D00E /* LottieView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -166,6 +165,7 @@
 		89B169FC29E804080004D00E /* Lottie */ = {
 			isa = PBXGroup;
 			children = (
+				89B169FF29E804530004D00E /* LottieView.swift */,
 				89B169FD29E804270004D00E /* loading.json */,
 				89B16A0129E814540004D00E /* 99109-loading.json */,
 			);
